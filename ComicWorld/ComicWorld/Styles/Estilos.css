@@ -1,0 +1,98 @@
+﻿/* Estilos para la plantilla principal */
+* {
+    box-sizing: border-box;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+html {
+    font-family: "Lucida Sans", sans-serif;
+}
+/* Estilos para el encabezado */
+.header {
+    background-color: #9933cc;
+    color: #ffffff;
+    padding: 15px;
+}
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.menu li {
+    padding: 8px;
+    margin-bottom: 7px;
+    background-color :#33b5e5;
+    color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.menu li:hover {
+    background-color: #0099cc;
+}
+.aside {
+    background-color: #33b5e5;
+    padding: 15px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+/* Estilos para el pie de página */
+.footer {
+    background-color: #0099cc;
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    padding: 15px;
+}
+/* Para dispositivos móbiles */
+[class*="col-"] {
+    width: 100%;
+}
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-m-1 {width: 11.11%;}
+    .col-m-2 {width: 22.22%;}
+    .col-m-3 {width: 33.33%;}
+    .col-m-4 {width: 44.44%;}
+    .col-m-5 {width: 55.55%;}
+    .col-m-6 {width: 66.66%;}
+    .col-m-7 {width: 77.77%;}
+    .col-m-8 {width: 88.88%;}
+    .col-m-9 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 11.11%;}
+    .col-2 {width: 22.22%;}
+    .col-3 {width: 33.33%;}
+    .col-4 {width: 44.44%;}
+    .col-5 {width: 55.55%;}
+    .col-6 {width: 66.66%;}
+    .col-7 {width: 77.77%;}
+    .col-8 {width: 88.88%;}
+    .col-9 {width: 100%;}
+}
+/* Estilos para tablas de listados */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}

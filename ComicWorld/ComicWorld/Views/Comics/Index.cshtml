@@ -1,0 +1,31 @@
+﻿@model ComicWorld.Models.Comics
+
+@{
+    ViewBag.Title = "Comic World - Listado de Comics";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Body {
+    <h2>Listado de Comics</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titulo</th>
+                <th>Foto</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var lineaCom in Model.Listado)
+            {
+                <tr>
+                    <td>@lineaCom.id</td>
+                    <td>@lineaCom.titulo</td>
+                    <td>@lineaCom.foto</td>
+                    <td>@lineaCom.precio</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

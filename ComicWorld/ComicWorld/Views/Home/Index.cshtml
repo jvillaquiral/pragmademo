@@ -1,0 +1,22 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Bienvenidos a Comic World</title>
+</head>
+<body>
+    <div>
+         @Html.ActionLink("Usuarios","Index","Usuarios")
+    </div>
+    <div>
+        @Html.ActionLink("Comics", "Index", "Comics")
+    </div>
+    <div>
+        @Html.ActionLink("Comentarios", "LstComentarios", "Comics")
+    </div>
+</body>
+</html>

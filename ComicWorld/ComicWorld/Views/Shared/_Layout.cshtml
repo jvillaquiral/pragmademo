@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Comic World</title>
+    <link href="~/Styles/Estilos.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="header">
+        <h1>Comic World</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-3 col-m-9 menu">
+            <ul>
+                <li>Comics</li>
+                <li>Usuarios</li>
+                <li>Salir</li>
+            </ul>
+        </div>
+
+        <div class="col-6 col-m-9">
+            @RenderSection("Body")
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Módulo administrativo desarrollado para el proceso de selección de Pragma.</p>
+    </div>
+
+</body>
+</html>

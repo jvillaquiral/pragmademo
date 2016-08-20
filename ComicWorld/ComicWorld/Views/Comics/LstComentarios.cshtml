@@ -1,0 +1,34 @@
+﻿@model ComicWorld.Models.Comentarios
+
+@{
+    ViewBag.Title = "Comic World - Listado de Comentarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Body {
+    <h2>Listado de Comentarios</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Comic Id</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Texto</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var lineaCom in Model.Listado)
+            {
+                <tr>
+                    <td>@lineaCom.id</td>
+                    <td>@lineaCom.comicId</td>
+                    <td>@lineaCom.nombre</td>
+                    <td>@lineaCom.correo</td>
+                    <td>@lineaCom.texto</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

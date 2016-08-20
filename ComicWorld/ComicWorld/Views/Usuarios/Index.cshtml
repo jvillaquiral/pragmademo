@@ -1,0 +1,35 @@
+﻿@model ComicWorld.Models.Usuarios
+
+@{
+    ViewBag.Title = "Comic World - Listado de Usuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Body {
+<h2>Listado de Usuarios</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Usuario</th>
+            <th>Clave</th>
+            <th>Nombre</th>
+            <th>Cédula</th>
+            <th>Correo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var lineaUsu in Model.Listado)
+        {
+            <tr>
+                <td>@lineaUsu.id</td>
+                <td>@lineaUsu.usuario</td>
+                <td>@lineaUsu.clave</td>
+                <td>@lineaUsu.nombre</td>
+                <td>@lineaUsu.cedula</td>
+                <td>@lineaUsu.correo</td>
+            </tr>
+        }
+    </tbody>
+</table>
+}
+
