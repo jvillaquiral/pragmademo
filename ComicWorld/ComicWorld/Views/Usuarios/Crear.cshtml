@@ -1,0 +1,26 @@
+﻿@model ComicWorld.Models.Usuario
+@{
+    ViewBag.Title = "Comic World - Registro de usuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Body {
+<h3>Ingreso de nuevos usuarios</h3>
+@using (Html.BeginForm())
+{
+    <div class="login">
+        <label>Usuario:</label>
+        @Html.TextBoxFor(m => m.usuario)
+        <label>Clave:</label>
+        @Html.TextBoxFor(m => m.clave)
+        <label>Nombre:</label>
+        @Html.TextBoxFor(m => m.nombre)
+        <label>Cedula:</label>
+        @Html.TextBoxFor(m => m.cedula)
+        <label>Correo:</label>
+        @Html.TextBoxFor(m => m.correo)
+        @Html.ValidationSummary()
+        <input type="submit" value="Crear" />
+    </div>
+}
+}
