@@ -1,0 +1,30 @@
+﻿@using ComicWorld.Models
+@model DetalleComic
+@{
+    ViewBag.Title = "Comic World - " + Model.comicConsultado.titulo;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Body {
+    <h2>@Model.comicConsultado.titulo</h2>
+    <p>
+    <img width="300" src="@Model.comicConsultado.foto" class="imgDetalle" />
+    <h3>Precio: @Model.comicConsultado.precio.ToString("C")</h3>
+    <p><h3>Resumen</h3></p>
+    <p>@Model.comicConsultado.descripcion</p>
+    <p><h3>Comentarios</h3></p>
+    @foreach(Comentario com in Model.lstComentariosCConsultado)
+    {
+        if (com.comicId == Model.comicConsultado.id)
+        {
+            <p><b>Nombre </b>@com.nombre</p>
+            <p><b>Correo </b>@com.correo</p>
+            <p><b>Comentario </b>@com.texto</p>
+        }
+    }
+    </p>    
+    @using (Html.BeginForm("Modificar", "Comics", FormMethod.Get))
+    {
+        <input type="submit" value="Modificar Comic" />
+    }
+}
