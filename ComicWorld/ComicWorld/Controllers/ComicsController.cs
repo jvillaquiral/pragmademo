@@ -7,6 +7,7 @@ using ComicWorld.Models;
 
 namespace ComicWorld.Controllers
 {
+    [Authorize]
     public class ComicsController : Controller
     {
         Comics lstComics = new Comics();

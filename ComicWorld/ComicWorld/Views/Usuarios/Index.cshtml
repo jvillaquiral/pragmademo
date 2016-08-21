@@ -31,5 +31,9 @@
         }
     </tbody>
 </table>
+@using (Html.BeginForm("Crear", "Usuarios", FormMethod.Get))
+{
+    <input type="submit" value="Nuevo Usuario" />
+}
 }
 

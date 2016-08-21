@@ -1,22 +1,39 @@
-﻿@{
+﻿@model ComicWorld.Models.LoginUsuario
+@{
     Layout = null;
 }
 <!DOCTYPE html>
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenidos a Comic World</title>
+    <link href="~/Styles/Estilos.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
-         @Html.ActionLink("Usuarios","Index","Usuarios")
+    <div class="header">
+        <h1>Comic World</h1>
     </div>
-    <div>
-        @Html.ActionLink("Comics", "Index", "Comics")
+    <div class="row">
+        <div>
+            <h3>Bienvenido al sistema administrativo de Comic World</h3>
+
+            @using (Html.BeginForm())
+            {
+                <div class="login">
+                    <label>Nombre de Usuario:</label>
+                    @Html.TextBoxFor(m => m.usuario)
+                    <label>Clave:</label>
+                    @Html.PasswordFor(m => m.clave)
+                    @Html.ValidationSummary()
+                    <input type="submit" value="Ingresar" />
+                </div>
+            }
+        </div>
     </div>
-    <div>
-        @Html.ActionLink("Comentarios", "LstComentarios", "Comics")
+    <div class="footer">
+        <p>Módulo administrativo desarrollado para el proceso de selección de Pragma.</p>
     </div>
 </body>
 </html>

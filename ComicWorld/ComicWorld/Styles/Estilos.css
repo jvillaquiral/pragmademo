@@ -35,13 +35,10 @@ html {
 .menu li:hover {
     background-color: #0099cc;
 }
-.aside {
-    background-color: #33b5e5;
-    padding: 15px;
+li a {
+    text-decoration: none;
     color: #ffffff;
-    text-align: center;
-    font-size: 14px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    display: block;
 }
 /* Estilos para el pie de página */
 .footer {
@@ -96,3 +93,51 @@ th {
     background-color: #4CAF50;
     color: white;
 }
+/*Estilos formulario*/
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.login {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+/*Estilos mesajes de validacion*/
+.field-validation-error {color: #f00;}
+.field-validation-valid { display: none;}
+.input-validation-error { border: 1px solid #f00; background-color: #fee; }
+.validation-summary-errors { font-weight: bold; color: #f00;}
+.validation-summary-valid { display: none;}
