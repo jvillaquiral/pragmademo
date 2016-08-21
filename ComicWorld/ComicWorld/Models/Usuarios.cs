@@ -93,7 +93,7 @@ namespace ComicWorld.Models
             }
         }
     }
-
+    //Modelo utilizado para recibir los datos de la ventana de login
     public class LoginUsuario
     {
         [Required]
