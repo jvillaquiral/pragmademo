@@ -7,11 +7,9 @@
     <link href="~/Styles/Estilos.css" rel="stylesheet" />
 </head>
 <body>
-
-    <div class="header">
+<div class="header">
         <h1>Comic World</h1>
     </div>
-
     <div class="row">
         <div class="col-3 col-m-9 menu">
             <ul>
@@ -20,7 +18,6 @@
                 <li>@Html.ActionLink("Salir", "Salida", "Home")</li>
             </ul>
         </div>
-
         <div class="col-6 col-m-9">
             @if (TempData["mensaje"] != null)
             {
@@ -29,10 +26,8 @@
             @RenderSection("Body")
         </div>
     </div>
-
     <div class="footer">
         <p>Módulo administrativo desarrollado para el proceso de selección de Pragma.</p>
     </div>
-
 </body>
 </html>

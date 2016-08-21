@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ComicWorld.Models;
+using System.IO;
 
 namespace ComicWorld.Controllers
 {
@@ -22,6 +23,52 @@ namespace ComicWorld.Controllers
         public ActionResult LstComentarios()
         {
             return View(lstComentarios);
+        }
+        // GET: /Comentarios/
+        public ActionResult Crear()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Crear(Comic tempComic, HttpPostedFileBase archivo)
+        {
+            if (ModelState.IsValid)
+            {
+                //Valiar que se cargue una foto
+                if (archivo == null)
+                {
+                    ModelState.AddModelError("", "Por favor ingrese una foto");
+                    return View();
+                }
+                else
+                {
+                    //Crear nombre de archivo para la foto
+                    tempComic.foto = (DateTime.Now.ToString("yyyyMMddHHmmss") + Path.GetExtension(archivo.FileName));
+                    if (!lstComics.AdicionarComic(tempComic))
+                    {
+                        ModelState.AddModelError("", "Ya existe un comic con el mismo título");
+                        return View();
+                    }
+                    else
+                    {
+                        //Guardar la foto en el servidor
+                        archivo.SaveAs(Server.MapPath("~/Content/Fotos/" + tempComic.foto));
+                        //notificar de la acción exitosa
+                        TempData["mensaje"] = string.Format("El comic {0} fue creado exitosamente", tempComic.titulo);
+                        return RedirectToAction("Index");
+                    }
+                }
+            }
+            else
+            { 
+                return View(); 
+            }            
+        }
+        public ActionResult Detalle(int id = 1)
+        {
+            Comic temporal = lstComics.ComicporId(id);
+            DetalleComic detComic = new DetalleComic { comicConsultado = temporal, lstComentariosCConsultado = lstComentarios.Listado };
+            return View(detComic);
         }
 	}
 }

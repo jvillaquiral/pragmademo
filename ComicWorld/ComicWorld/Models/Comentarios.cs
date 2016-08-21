@@ -29,7 +29,7 @@ namespace ComicWorld.Models
                 lstComentarios = (List<Comentario>)HttpContext.Current.Application[keyComentarios];
             }
         }
-        public IEnumerable<Comentario> Listado
+        public List<Comentario> Listado
         {
             get { return lstComentarios; }
         }

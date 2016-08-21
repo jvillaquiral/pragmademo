@@ -81,6 +81,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Fotos\comic1.jpg" />
+    <Content Include="Content\Fotos\comic10.jpg" />
+    <Content Include="Content\Fotos\comic11.jpg" />
+    <Content Include="Content\Fotos\comic12.jpg" />
+    <Content Include="Content\Fotos\comic13.jpg" />
+    <Content Include="Content\Fotos\comic14.jpg" />
+    <Content Include="Content\Fotos\comic15.jpg" />
+    <Content Include="Content\Fotos\comic16.jpg" />
+    <Content Include="Content\Fotos\comic17.jpg" />
+    <Content Include="Content\Fotos\comic18.jpg" />
+    <Content Include="Content\Fotos\comic19.jpg" />
+    <Content Include="Content\Fotos\comic2.jpg" />
+    <Content Include="Content\Fotos\comic20.jpg" />
+    <Content Include="Content\Fotos\comic21.jpg" />
+    <Content Include="Content\Fotos\comic22.jpg" />
+    <Content Include="Content\Fotos\comic23.jpg" />
+    <Content Include="Content\Fotos\comic24.jpg" />
+    <Content Include="Content\Fotos\comic25.jpg" />
+    <Content Include="Content\Fotos\comic26.jpg" />
+    <Content Include="Content\Fotos\comic27.jpg" />
+    <Content Include="Content\Fotos\comic28.jpg" />
+    <Content Include="Content\Fotos\comic29.jpg" />
+    <Content Include="Content\Fotos\comic3.jpg" />
+    <Content Include="Content\Fotos\comic30.jpg" />
+    <Content Include="Content\Fotos\comic31.jpg" />
+    <Content Include="Content\Fotos\comic32.jpg" />
+    <Content Include="Content\Fotos\comic4.jpg" />
+    <Content Include="Content\Fotos\comic5.jpg" />
+    <Content Include="Content\Fotos\comic6.jpg" />
+    <Content Include="Content\Fotos\comic7.jpg" />
+    <Content Include="Content\Fotos\comic8.jpg" />
+    <Content Include="Content\Fotos\comic9.jpg" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -120,6 +152,8 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="Views\Comics\Crear.cshtml" />
+    <Content Include="Views\Comics\Detalle.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

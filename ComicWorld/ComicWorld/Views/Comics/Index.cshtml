@@ -20,12 +20,16 @@
             {
                 <tr>
                     <td>@lineaCom.id</td>
-                    <td>@lineaCom.titulo</td>
-                    <td>@lineaCom.foto</td>
+                    <td>@Html.ActionLink(lineaCom.titulo, "Detalle", new { lineaCom.id })</td>
+                    <td><img width="150" src="@lineaCom.foto" />                    </td>
                     <td>@lineaCom.precio</td>
                 </tr>
             }
         </tbody>
     </table>
+    @using (Html.BeginForm("Crear", "Comics", FormMethod.Get))
+    {
+        <input type="submit" value="Nuevo Comic" />
+    }
 }
 

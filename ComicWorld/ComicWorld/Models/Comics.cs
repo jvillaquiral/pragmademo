@@ -54,10 +54,37 @@ namespace ComicWorld.Models
             repuestaJPH.Close();
 
             //Llenar el repositorio de comic con el listado de posts obtenido
+            int intContadorFoto = 1;
             foreach (PostJPH linea in lista)
             {
-                lstComics.Add(new Comic { id = linea.id, titulo = linea.title, descripcion = linea.body, foto = "imagen"+linea.id.ToString(), precio = 10000});
+                lstComics.Add(new Comic { id = linea.id, titulo = linea.title, descripcion = linea.body, foto = "/Content/Fotos/comic" + intContadorFoto +".jpg", precio = 10000 });
+                intContadorFoto++;
+                if (intContadorFoto > 32)
+                    intContadorFoto = 1;
             }
+        }
+        //Método para adicionar un comic
+        public bool AdicionarComic(Comic comDato)
+        {
+            //Validar que el título no exista ya
+            int titExistente = lstComics.Where(x => x.titulo == comDato.titulo).Count();
+            if (titExistente > 0)
+                return false;
+            else
+            {
+                //Obtener el mayor id
+                int mayorId = lstComics.Max(x => x.id);
+                comDato.id = ++mayorId;
+                //Adicionar el usuario al repositorio
+                lstComics.Add(comDato);
+                //Recrear la variable de aplicación con la lista modificada
+                HttpContext.Current.Application[keyComics] = lstComics;
+                return true;
+            }
+        }
+        public Comic ComicporId(int prmIdComir)
+        {
+            return lstComics.Find(x => x.id == prmIdComir);
         }
     }
     //Declarar clases para los usuarios recibidos de Jsonplaceholder
@@ -68,5 +95,11 @@ namespace ComicWorld.Models
         public string title { get; set; }
         public string body { get; set; }
  
+    }
+    //Declarar una estructura temporal para el detalle del comic
+    public class DetalleComic
+    {
+        public Comic comicConsultado { get; set; }
+        public List<Comentario> lstComentariosCConsultado { get; set; }
     }
 }

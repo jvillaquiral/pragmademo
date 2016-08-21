@@ -10,11 +10,10 @@ namespace ComicWorld.Models
     {
         [Required(ErrorMessage = "Por favor ingrese un id")]
         public int id { get; set; }
-        [Required(ErrorMessage = "Por favor ingrese un titulo")]
+        [Required(ErrorMessage = "Por favor ingrese un título")]
         public string titulo { get; set; }
-        [Required(ErrorMessage = "Por favor ingrese una descripcion")]
+        [Required(ErrorMessage = "Por favor ingrese una descripción")]
         public string descripcion { get; set; }
-        [Required(ErrorMessage = "Por favor ingrese una foto")]
         public string foto { get; set; }
         [Required(ErrorMessage = "Por favor ingrese un precio")]
         public int precio { get; set; }
