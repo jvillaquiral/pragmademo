@@ -12,7 +12,7 @@ namespace ComicWorld.Models
     public class Usuarios
     {
         private List<Usuario> lstUsuarios = new List<Usuario>();
-        string keyUsuarios = "lstUsuarios";
+        private string keyUsuarios = "lstUsuarios";
         public Usuarios()
         {
             //Validar que el repositorio de usuario ya esté cargado como una variable de aplicación
