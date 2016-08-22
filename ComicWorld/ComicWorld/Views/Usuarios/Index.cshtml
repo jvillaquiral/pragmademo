@@ -5,7 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section Body {
-<h2>Listado de Usuarios</h2>
+@using (Html.BeginForm("Crear", "Usuarios", FormMethod.Get))
+{
+    <h2>Listado de Usuarios  <input type="submit" value="Nuevo Usuario" /></h2>
+}
 <table>
     <thead>
         <tr>
@@ -31,9 +34,5 @@
         }
     </tbody>
 </table>
-@using (Html.BeginForm("Crear", "Usuarios", FormMethod.Get))
-{
-    <input type="submit" value="Nuevo Usuario" />
-}
 }
 

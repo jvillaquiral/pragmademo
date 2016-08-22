@@ -5,31 +5,25 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section Body {
-    <h2>Listado de Comics</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Titulo</th>
-                <th>Foto</th>
-                <th>Precio</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var lineaCom in Model.Listado)
-            {
-                <tr>
-                    <td>@lineaCom.id</td>
-                    <td>@Html.ActionLink(lineaCom.titulo, "Detalle", new { lineaCom.id })</td>
-                    <td><img width="150" src="@lineaCom.foto" />                    </td>
-                    <td>@lineaCom.precio</td>
-                </tr>
-            }
-        </tbody>
-    </table>
     @using (Html.BeginForm("Crear", "Comics", FormMethod.Get))
     {
-        <input type="submit" value="Nuevo Comic" />
+        <h1>Listado de Comics  <input type="submit" value="Nuevo Comic" class="botonListado" /></h1>
+    }
+    @using (Html.BeginForm())
+    {
+            <input id="busqueda" name="busqueda" type="text" placeholder="Busqueda.." class="busqueda">
+            <input type="submit" value="Buscar" class="botonListado" />
+    }
+    @foreach (var lineaCom in Model.Listado)
+    {   
+        <div class="responsive">
+          <div class="img">
+            <a href="@Url.Action("Detalle", new { lineaCom.id })">
+                <img src="@lineaCom.foto">
+            </a>
+            <div class="desc">@Html.ActionLink(lineaCom.titulo, "Detalle", new { lineaCom.id }, new { @class = "desc" })</div>
+          </div>
+        </div>
     }
 }
 

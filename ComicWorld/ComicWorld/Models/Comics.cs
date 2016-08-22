@@ -11,7 +11,8 @@ namespace ComicWorld.Models
     public class Comics
     {
         private List<Comic> lstComics = new List<Comic>();
-        string keyComics = "lstComics";
+        private string keyComics = "lstComics";
+        public string pmrBusqueda = "";
 
         public Comics()
         {
@@ -31,7 +32,23 @@ namespace ComicWorld.Models
         }
         public IEnumerable<Comic> Listado
         {
-            get { return lstComics; }
+            get {
+                if (pmrBusqueda.Length == 0)
+                    return lstComics;
+                else
+                    if (pmrBusqueda.Contains(' '))
+                    {
+                        string[] cadBusqueda = pmrBusqueda.Split(' ');
+                        IEnumerable<Comic> temporal = new List<Comic> ();
+                        foreach(string dato in cadBusqueda)
+                        {
+                            temporal = temporal.Union(lstComics.Where(x => x.titulo.Contains(dato))).ToList();
+                        }
+                        return temporal;
+                    }
+                    else
+                        return lstComics.Where(x => x.titulo.Contains(pmrBusqueda));
+            }
         }
         //Método para consumir el servicio JSON placeholder y llenar el repositorio de comics
         public void ConsumirJPH()

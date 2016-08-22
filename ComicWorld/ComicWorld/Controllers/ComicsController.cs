@@ -19,6 +19,12 @@ namespace ComicWorld.Controllers
         {
             return View(lstComics);
         }
+        [HttpPost]
+        public ActionResult Index(string busqueda = "")
+        {
+            lstComics.pmrBusqueda = busqueda;
+            return View(lstComics);
+        }
         // GET: /Comentarios/
         public ActionResult LstComentarios()
         {
@@ -43,7 +49,7 @@ namespace ComicWorld.Controllers
                 else
                 {
                     //Crear nombre de archivo para la foto
-                    tempComic.foto = (DateTime.Now.ToString("yyyyMMddHHmmss") + Path.GetExtension(archivo.FileName));
+                    tempComic.foto = ("/Content/Fotos/"+DateTime.Now.ToString("yyyyMMddHHmmss") + Path.GetExtension(archivo.FileName));
                     if (!lstComics.AdicionarComic(tempComic))
                     {
                         ModelState.AddModelError("", "Ya existe un comic con el mismo título");
@@ -52,7 +58,7 @@ namespace ComicWorld.Controllers
                     else
                     {
                         //Guardar la foto en el servidor
-                        archivo.SaveAs(Server.MapPath("~/Content/Fotos/" + tempComic.foto));
+                        archivo.SaveAs(Server.MapPath(tempComic.foto));
                         //notificar de la acción exitosa
                         TempData["mensaje"] = string.Format("El comic {0} fue creado exitosamente", tempComic.titulo);
                         return RedirectToAction("Index");
